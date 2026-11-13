@@ -1,0 +1,23 @@
+{
+  "generatedAt": "2026-11-13T20:49:10.099Z",
+  "boardUrl": "https://trello.com/b/6Ve8yJxP/inclusi%C3%B3n-tecnol%C3%B3gica-sge",
+  "metrics": {
+    "total": 50,
+    "completed": 47,
+    "pending": 3,
+    "percent": 94,
+    "byArea": {
+      "Conectar Técnico": 1,
+      "En proceso": 1,
+      "Reuniones Generales": 3,
+      "SGE": 43,
+      "Tareas 2026": 2
+    }
+  },
+  "publicCards": [],
+  "timeline": [],
+  "privacy": {
+    "publicCardCount": 0,
+    "rules": "La publicación de tarjetas requiere autorización mediante etiquetas Trello. Comentarios e identidades de integrantes no se publican."
+  }
+}
