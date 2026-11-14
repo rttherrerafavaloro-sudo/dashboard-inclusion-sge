@@ -12,7 +12,7 @@
 .layout{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;margin-top:16px}.panel{padding:20px}.panel h2{font-size:17px;margin:0 0 5px}.hint{color:var(--muted);font-size:12px;margin:0 0 18px}
 .progress{height:12px;border-radius:99px;background:#f1e6d3;overflow:hidden;display:flex;margin:14px 0 9px}.done{background:var(--teal);width:94%}.open{background:var(--amber);flex:1}.legend{display:flex;gap:18px;color:var(--muted);font-size:12px}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
 .bars{display:grid;gap:13px}.barrow{display:grid;grid-template-columns:145px 1fr 35px;align-items:center;gap:10px;font-size:13px}.track{height:10px;border-radius:99px;background:#edf1f5;overflow:hidden}.fill{height:100%;background:var(--blue);border-radius:99px}
-table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:11px 8px;border-bottom:1px solid var(--line)}th{color:var(--muted);font-weight:600}td.num{text-align:right;font-variant-numeric:tabular-nums}
+table{width:100%;border-collapse:collapse;font-size:13px;table-layout:fixed}th,td{text-align:left;padding:11px 8px;border-bottom:1px solid var(--line)}th{color:var(--muted);font-weight:600}th:first-child,td:first-child{width:40%}th.num,td.num{text-align:right;font-variant-numeric:tabular-nums;width:20%}
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 12px}.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 13px;color:var(--muted);cursor:pointer;font:inherit;font-size:13px}.tab.active{background:#e8eef6;color:var(--blue);border-color:#cbd8e8;font-weight:700}
 .tasks{display:grid;gap:9px}.task{display:flex;justify-content:space-between;gap:15px;padding:13px;border:1px solid var(--line);border-radius:12px;background:#fff}.task a{color:var(--ink);text-decoration:none;font-weight:600}.task a:hover{color:var(--blue);text-decoration:underline}.tag{white-space:nowrap;color:#94641d;background:#fbf1df;border-radius:999px;padding:4px 8px;font-size:11px;height:max-content}
 .note{margin-top:16px;background:#eef3f8;border-radius:12px;padding:13px 15px;color:#52657a;font-size:12px}
@@ -22,8 +22,8 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
 @media(max-width:480px){.wrap{padding:22px 14px}.grid{gap:9px}.metric{padding:14px}.metric strong{font-size:27px}.barrow{grid-template-columns:112px 1fr 25px;gap:7px}.proposal{grid-template-columns:1fr}}
 
 /* Secciones alimentadas por el snapshot público de Trello */
-.public-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
-.public-card{border:1px solid var(--line);border-radius:13px;padding:14px;background:#fff}
+.public-grid{display:flex;gap:12px;overflow-x:auto;overflow-y:hidden;padding:2px 2px 12px;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch}
+.public-card{border:1px solid var(--line);border-radius:13px;padding:14px;background:#fff;flex:0 0 300px;scroll-snap-align:start}
 .public-card h3{font-size:14px;margin:0 0 7px}
 .public-card p{font-size:13px;color:var(--muted);white-space:pre-wrap;margin:8px 0}
 .public-meta{display:flex;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:11px}
@@ -33,7 +33,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
 .timeline-item:before{content:"";position:absolute;left:-6px;top:17px;width:10px;height:10px;border-radius:50%;background:var(--blue)}
 .timeline-item b{font-size:13px}.timeline-item small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
 .empty-state{padding:16px;border:1px dashed #cbd5e1;border-radius:12px;color:var(--muted);font-size:13px}
-@media(max-width:480px){.public-grid{grid-template-columns:1fr}}
+@media(max-width:480px){.public-card{flex-basis:82vw}}
 
 
 /* Filtros y presentación ampliada de actividades */
@@ -52,6 +52,10 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
 .timeline-item small{line-height:1.5}
 .count-done{color:var(--teal);font-weight:800}
 .count-open{color:var(--amber);font-weight:800}
+.carousel-controls{display:flex;justify-content:flex-end;gap:7px;margin:-5px 0 10px}
+.carousel-controls button{border:1px solid var(--line);background:#fff;color:var(--blue);border-radius:8px;padding:6px 11px;font:inherit;font-size:16px;cursor:pointer}
+.carousel-controls button:hover{background:#eef3f8}
+.public-grid::-webkit-scrollbar{height:8px}.public-grid::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:99px}
 
 </style>
 </head>
@@ -93,6 +97,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
   <h2>Actividades documentadas</h2>
   <p class="hint">Registro visual de tareas autorizadas. Cada ficha puede incluir descripción, estado, fecha e imágenes adjuntas desde Trello.</p>
   <div class="public-tools"><select id="cards-area"><option value="all">Todas las áreas</option></select><select id="cards-status"><option value="all">Todos los estados</option><option value="done">Completadas</option><option value="open">Pendientes</option></select></div>
+  <div class="carousel-controls"><button type="button" id="cards-prev" aria-label="Ver actividades anteriores">‹</button><button type="button" id="cards-next" aria-label="Ver actividades siguientes">›</button></div>
   <div class="public-grid" id="public-cards"><div class="empty-state">Cargando actividades autorizadas…</div></div>
 </section>
 <section class="panel" style="margin-top:16px">
@@ -204,6 +209,8 @@ document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>
     options(cardArea,cards.map(c=>c.area));options(timeArea,events.map(e=>e.area));
     renderCards();renderTimeline();
     cardArea.addEventListener("change",renderCards);cardStatus.addEventListener("change",renderCards);
+    document.getElementById("cards-prev").addEventListener("click",()=>cardsRoot.scrollBy({left:-320,behavior:"smooth"}));
+    document.getElementById("cards-next").addEventListener("click",()=>cardsRoot.scrollBy({left:320,behavior:"smooth"}));
     timePeriod.addEventListener("change",renderTimeline);timeArea.addEventListener("change",renderTimeline);
     document.getElementById("export-timeline").addEventListener("click",exportTimelineCSV);
     // La lista de pendientes y sus filtros también se construyen desde Trello.
