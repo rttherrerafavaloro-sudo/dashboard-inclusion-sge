@@ -50,6 +50,8 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
 .timeline-tools{display:flex;gap:9px;flex-wrap:wrap;margin:12px 0}
 .timeline-tools select{border:1px solid var(--line);background:#fff;border-radius:9px;padding:8px 10px;font:inherit;font-size:12px}
 .timeline-item small{line-height:1.5}
+.count-done{color:var(--teal);font-weight:800}
+.count-open{color:var(--amber);font-weight:800}
 
 </style>
 </head>
@@ -79,16 +81,13 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
 </section>
 <section class="panel" style="margin-top:16px">
   <h2>Estado por área</h2><p class="hint">Actividades completadas y pendientes; no se contabilizan las tarjetas usadas como títulos de sección</p>
-  <table><thead><tr><th>Área / lista</th><th class="num">Completas</th><th class="num">Abiertas</th><th class="num">Total</th></tr></thead>
+  <table><thead><tr><th>Área / lista</th><th class="num">Completadas ✓</th><th class="num">Pendientes</th><th class="num">Total</th></tr></thead>
   <tbody id="area-rows"></tbody></table>
 </section>
 <section class="panel" style="margin-top:16px">
   <h2>Seguimiento de pendientes</h2><p class="hint">Seleccioná un área para consultar las tres actividades pendientes</p>
   <div class="tabs" id="tabs"></div>
   <div class="tasks" id="tasks"><div class="empty-state">Cargando pendientes…</div></div>
-    <div class="task" data-area="Objetivo 2026"><a href="https://trello.com/c/GLtiOj0W/6-titulaci%C3%B3n-del-haspen-modificada" target="_blank" rel="noopener">Titulación del Haspen modificada</a><span class="tag">Objetivo 2026</span></div>
-    <div class="task" data-area="En proceso"><a href="https://trello.com/c/EjcZYiSw/5-titulaci%C3%B3n-del-soberan%C3%ADa-modificada" target="_blank" rel="noopener">Titulación del Soberanía modificada</a><span class="tag">En proceso</span></div>
-  </div>
 </section>
 <section class="panel" style="margin-top:16px" id="actividad-publicada">
   <h2>Actividades documentadas</h2>
@@ -198,7 +197,7 @@ document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>
     });}
     if(areaRows){areaRows.replaceChildren();areas.forEach(area=>{
       const tr=node("tr"),cell=(v,cls)=>node("td",cls||"",String(v));
-      tr.append(cell(area),cell(completedByArea[area]||0,"num"),cell(pendingByArea[area]||0,"num"),cell(byArea[area]||0,"num"));areaRows.append(tr);
+      tr.append(cell(area),cell("✓ "+(completedByArea[area]||0),"num count-done"),cell(pendingByArea[area]||0,"num count-open"),cell(byArea[area]||0,"num"));areaRows.append(tr);
     });}
     cards=Array.isArray(data.publicCards)?data.publicCards:[];
     events=Array.isArray(data.timeline)?data.timeline:[];
