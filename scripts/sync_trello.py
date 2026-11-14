@@ -19,9 +19,17 @@ BOARD_ID = "6Ve8yJxP"
 BASE = "https://api.trello.com/1"
 HEADERS = {"User-Agent": "CFP-SGE-Dashboard/1.0"}
 HEADER_CARDS = {
-    "objetivos", "objetivo 2026:", "tareas", "reuniones",
-    "desbloqueo y reparaciones", "sge"
+    "objetivos", "objetivo 2026", "objetivo 2026:", "tareas",
+    "tareas 2026", "reuniones", "reuniones generales",
+    "desbloqueo y reparaciones", "sge", "conectar tecnico",
+    "en proceso"
 }
+
+def normalize_title(value):
+    value = clean_text(value).casefold()
+    value = value.replace("á", "a").replace("é", "e").replace("í", "i")
+    value = value.replace("ó", "o").replace("ú", "u").replace("ü", "u")
+    return re.sub(r"[^a-z0-9]+", " ", value).strip()
 PUBLIC_LABEL = "PUBLICAR"
 DETAIL_LABEL = "PUBLICAR-DETALLE"
 IMAGE_LABEL = "PUBLICAR-IMAGENES"
@@ -54,16 +62,10 @@ def main():
         "fields": "id,date,type,data"
     })
 
-    activities_cards = {}
-    for action in activities:
-        data = action.get("data") or {}
-        card = data.get("card") or {}
-        if card.get("id"):
-            activities_cards[card["id"]] = card.get("name", "")
 
     real_cards = [
         c for c in cards
-        if clean_text(c.get("name")).casefold() not in HEADER_CARDS
+        if normalize_title(c.get("name")) not in {normalize_title(x) for x in HEADER_CARDS}
         and not c.get("closed", False)
     ]
     # Keep closed section-header cards out, but count archived/closed task cards
@@ -76,6 +78,13 @@ def main():
     complete = [c for c in real_cards if c.get("dueComplete")]
     pending = [c for c in real_cards if not c.get("dueComplete") and not c.get("closed")]
     by_area = Counter(list_names.get(c.get("idList"), "Otra") for c in real_cards)
+
+    created_dates = {}
+    for action in activities:
+        if action.get("type") == "createCard":
+            card = (action.get("data") or {}).get("card") or {}
+            if card.get("id"):
+                created_dates[card["id"]] = action.get("date")
 
     public_cards = []
     for c in real_cards:
@@ -91,6 +100,7 @@ def main():
             "closed": bool(c.get("closed")),
             "due": c.get("due"),
             "lastActivity": c.get("dateLastActivity"),
+            "createdAt": created_dates.get(c["id"]),
         }
         if DETAIL_LABEL in labels:
             item["description"] = clean_text(c.get("desc"), 4000)
@@ -118,6 +128,7 @@ def main():
             "date": action.get("date"),
             "type": action.get("type"),
             "cardTitle": clean_text(card.get("name"), 240),
+            "area": list_names.get(card.get("idList"), "Otra"),
         }
         # Only expose list transitions, never comment text or member identities.
         if action.get("type") == "updateCard":
