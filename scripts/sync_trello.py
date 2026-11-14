@@ -116,17 +116,25 @@ def main():
         public_cards.append(item)
 
     public_ids = {c["id"] for c in public_cards}
-    timeline = []
+    public_cards_by_id = {c["id"]: c for c in public_cards}
+    # Una sola entrada por tarjeta: conservar el movimiento más reciente.
+    latest_by_card = {}
     for action in activities:
         data = action.get("data") or {}
         card = data.get("card") or {}
-        if card.get("id") not in public_ids:
+        card_id = card.get("id")
+        if card_id not in public_ids:
             continue
+        action_date = action.get("date") or ""
+        if card_id in latest_by_card and (latest_by_card[card_id].get("date") or "") >= action_date:
+            continue
+        current_card = public_cards_by_id[card_id]
         item = {
-            "date": action.get("date"),
+            "cardId": card_id,
+            "date": action_date,
             "type": action.get("type"),
-            "cardTitle": clean_text(card.get("name"), 240),
-            "area": list_names.get(card.get("idList"), "Otra"),
+            "cardTitle": current_card["title"],
+            "area": current_card["area"],
         }
         # Only expose list transitions, never comment text or member identities.
         if action.get("type") == "updateCard":
@@ -135,8 +143,8 @@ def main():
             if before.get("name") or after.get("name"):
                 item["fromList"] = before.get("name")
                 item["toList"] = after.get("name")
-        timeline.append(item)
-    timeline.sort(key=lambda x: x.get("date") or "", reverse=True)
+        latest_by_card[card_id] = item
+    timeline = sorted(latest_by_card.values(), key=lambda x: x.get("date") or "", reverse=True)
 
     snapshot = {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
