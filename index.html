@@ -172,7 +172,7 @@ document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>
       e.type==="createCard"?"Creación":e.type==="addAttachmentToCard"?"Adjunto":e.type==="updateCard"?"Actualización":e.type==="updateCheckItemStateOnCard"?"Checklist":"Movimiento",
       e.fromList||e.toList?(String(e.fromList||"")+" → "+String(e.toList||"")):""
     ].map(quote).join(";"))];
-    const blob=new Blob(["\\uFEFF"+lines.join("\\r\\n")],{type:"text/csv;charset=utf-8;"});
+    const blob=new Blob(["\uFEFF"+lines.join("\r\n")],{type:"text/csv;charset=utf-8;"});
     const url=URL.createObjectURL(blob),link=document.createElement("a");
     link.href=url;link.download="historial-cronologico-sge.csv";
     document.body.append(link);link.click();link.remove();URL.revokeObjectURL(url);
