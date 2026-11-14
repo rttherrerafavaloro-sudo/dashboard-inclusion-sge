@@ -35,6 +35,22 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
 .empty-state{padding:16px;border:1px dashed #cbd5e1;border-radius:12px;color:var(--muted);font-size:13px}
 @media(max-width:480px){.public-grid{grid-template-columns:1fr}}
 
+
+/* Filtros y presentación ampliada de actividades */
+.public-tools{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0 16px}
+.public-tools select{border:1px solid var(--line);background:#fff;border-radius:9px;padding:9px 11px;color:var(--ink);font:inherit;font-size:12px;min-width:150px}
+.public-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.public-card img{width:100%;height:190px;max-height:none;object-fit:cover;border-radius:0;margin:0;background:#edf1f5}
+.public-card-body{padding:14px;display:flex;flex-direction:column;gap:7px;flex:1}
+.public-card h3{font-size:15px;margin:0}
+.public-card p{margin:2px 0 5px;line-height:1.55}
+.public-meta span{background:#f1f4f8;padding:4px 7px;border-radius:6px}
+.public-card .public-link{font-size:12px;font-weight:700;color:var(--blue);text-decoration:none;margin-top:auto}
+.public-card .public-link:hover{text-decoration:underline}
+.timeline-tools{display:flex;gap:9px;flex-wrap:wrap;margin:12px 0}
+.timeline-tools select{border:1px solid var(--line);background:#fff;border-radius:9px;padding:8px 10px;font:inherit;font-size:12px}
+.timeline-item small{line-height:1.5}
+
 </style>
 </head>
 <body>
@@ -107,12 +123,14 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
 
 <section class="panel" style="margin-top:16px" id="actividad-publicada">
   <h2>Actividades documentadas</h2>
-  <p class="hint">Tarjetas autorizadas para publicación desde Trello. El detalle y las imágenes aparecen únicamente con etiquetas específicas.</p>
+  <p class="hint">Registro visual de tareas autorizadas. Cada ficha puede incluir descripción, estado, fecha e imágenes adjuntas desde Trello.</p>
+  <div class="public-tools"><select id="cards-area"><option value="all">Todas las áreas</option></select><select id="cards-status"><option value="all">Todos los estados</option><option value="done">Completadas</option><option value="open">Pendientes</option></select></div>
   <div class="public-grid" id="public-cards"><div class="empty-state">Cargando actividades autorizadas…</div></div>
 </section>
 <section class="panel" style="margin-top:16px">
   <h2>Historial cronológico</h2>
-  <p class="hint">Movimientos y registros de las tarjetas autorizadas para publicación. No se muestran comentarios ni nombres de integrantes.</p>
+  <p class="hint">Actividad cronológica de las tareas publicadas. Se omiten comentarios y nombres de integrantes.</p>
+  <div class="timeline-tools"><select id="timeline-period"><option value="all">Todo el historial</option><option value="30">Últimos 30 días</option><option value="90">Últimos 90 días</option><option value="365">Último año</option></select><select id="timeline-area"><option value="all">Todas las áreas</option></select></div>
   <div class="timeline" id="public-timeline"><div class="empty-state">Cargando historial…</div></div>
 </section>
 
@@ -131,57 +149,64 @@ document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>
   const timelineRoot=document.getElementById("public-timeline");
   const fmt=(value)=>{if(!value)return "Fecha no informada";const d=new Date(value);return Number.isNaN(d.getTime())?"Fecha no informada":d.toLocaleString("es-AR",{dateStyle:"medium",timeStyle:"short"});};
   const node=(tag,cls,text)=>{const el=document.createElement(tag);if(cls)el.className=cls;if(text!==undefined)el.textContent=text;return el;};
+  let cards=[],events=[];
+  const cardArea=document.getElementById("cards-area"),cardStatus=document.getElementById("cards-status");
+  const timePeriod=document.getElementById("timeline-period"),timeArea=document.getElementById("timeline-area");
+  function options(select,values){[...new Set(values.filter(Boolean))].sort((a,b)=>a.localeCompare(b,"es")).forEach(v=>{const o=document.createElement("option");o.value=v;o.textContent=v;select.append(o);});}
+  function renderCards(){
+    cardsRoot.replaceChildren();
+    const area=cardArea.value,status=cardStatus.value;
+    const visible=cards.filter(c=>(area==="all"||c.area===area)&&(status==="all"||(status==="done"?c.completed:!c.completed)));
+    if(!visible.length){cardsRoot.append(node("div","empty-state",cards.length?"No hay actividades que coincidan con esos filtros.":"Todavía no hay tarjetas autorizadas. Para publicar una actividad, agregá PUBLICAR en sus etiquetas de Trello. Sumá PUBLICAR-DETALLE para mostrar la descripción y PUBLICAR-IMAGENES para mostrar adjuntos. No se publican comentarios ni nombres de integrantes."));return;}
+    visible.sort((a,b)=>(b.lastActivity||"").localeCompare(a.lastActivity||""));
+    for(const c of visible){
+      const card=node("article","public-card");
+      const images=(c.images||[]).filter(i=>i.url);
+      if(images.length){const image=node("img");image.src=images[0].url;image.alt=images[0].name||"Imagen de la actividad";image.loading="lazy";card.append(image);}
+      const body=node("div","public-card-body");
+      body.append(node("h3","",c.title||"Actividad"));
+      const meta=node("div","public-meta");
+      [c.area||"Sin área",c.completed?"Completada":"Pendiente","Último movimiento: "+fmt(c.lastActivity)].forEach(v=>meta.append(node("span","",v)));
+      body.append(meta);
+      if(c.description)body.append(node("p","",c.description));
+      if(c.due)body.append(node("p","", "Fecha de vencimiento: "+fmt(c.due)));
+      if(images.length>1){images.slice(1,4).forEach(img=>{const image=node("img");image.src=img.url;image.alt=img.name||"Imagen adjunta";image.loading="lazy";card.append(image);});}
+      const link=node("a","public-link","Ver actividad en Trello ↗");link.href=c.url||"#";link.target="_blank";link.rel="noopener noreferrer";body.append(link);
+      card.append(body);cardsRoot.append(card);
+    }
+  }
+  function renderTimeline(){
+    timelineRoot.replaceChildren();
+    const days=Number(timePeriod.value)||0,cutoff=days?Date.now()-days*86400000:0;
+    const visible=events.filter(e=>(!cutoff||new Date(e.date).getTime()>=cutoff)&&(timeArea.value==="all"||e.area===timeArea.value));
+    if(!visible.length){timelineRoot.append(node("div","empty-state",events.length?"No hay movimientos para ese período o área.":"El historial aparecerá cuando haya tarjetas autorizadas con la etiqueta PUBLICAR."));return;}
+    visible.slice(0,100).forEach(event=>{
+      const item=node("div","timeline-item");
+      let label=event.type==="createCard"?"Actividad creada":event.type==="addAttachmentToCard"?"Imagen o archivo adjunto":event.type==="updateCard"?"Actividad actualizada":event.type==="updateCheckItemStateOnCard"?"Checklist actualizado":"Movimiento registrado";
+      if(event.fromList||event.toList)label+=" · "+(event.fromList||"")+" → "+(event.toList||"");
+      item.append(node("b","",(event.cardTitle||"Actividad")+" — "+label));
+      item.append(node("small","",(event.area||"Sin área")+" · "+fmt(event.date)));
+      timelineRoot.append(item);
+    });
+  }
   try{
     const response=await fetch("data/trello.json?ts="+Date.now(),{cache:"no-store"});
     if(!response.ok)throw new Error("No se pudo leer data/trello.json");
-    const data=await response.json();
-    const m=data.metrics||{};
+    const data=await response.json(),m=data.metrics||{};
     const metricValues=[m.total??"—",m.completed??"—",m.pending??"—",(m.percent??"—")+"%"];
     document.querySelectorAll(".metric strong").forEach((el,i)=>{if(metricValues[i]!==undefined)el.textContent=metricValues[i];});
-    const stamp=document.querySelector(".stamp");
-    if(stamp)stamp.textContent="Actualizado: "+fmt(data.generatedAt);
-    const done=document.querySelector(".progress .done");
-    if(done)done.style.width=(Number(m.percent)||0)+"%";
-    const legend=document.querySelector(".legend");
-    if(legend)legend.textContent=(m.completed??0)+" completadas ("+(m.percent??0)+"%) · "+(m.pending??0)+" pendientes";
-    cardsRoot.replaceChildren();
-    const cards=Array.isArray(data.publicCards)?data.publicCards:[];
-    if(!cards.length){
-      cardsRoot.append(node("div","empty-state","Todavía no hay tarjetas autorizadas para aparecer aquí. En Trello, agregá la etiqueta PUBLICAR a las actividades que puedan mostrarse públicamente. Para incluir descripciones o imágenes, usá además PUBLICAR-DETALLE o PUBLICAR-IMAGENES."));
-    }else{
-      cards.sort((a,b)=>(b.lastActivity||"").localeCompare(a.lastActivity||""));
-      for(const c of cards){
-        const card=node("article","public-card");
-        const title=node("h3");
-        const link=node("a","",c.title||"Actividad");
-        link.href=c.url||"#";link.target="_blank";link.rel="noopener noreferrer";title.append(link);card.append(title);
-        card.append(node("div","public-meta",(c.area||"Sin área")+" · "+(c.completed?"Completada":"Pendiente")+" · "+fmt(c.lastActivity)));
-        if(c.description)card.append(node("p","",c.description));
-        for(const img of (c.images||[])){
-          if(!img.url)continue;
-          const image=node("img");image.src=img.url;image.alt=img.name||"Imagen adjunta";image.loading="lazy";card.append(image);
-        }
-        cardsRoot.append(card);
-      }
-    }
-    timelineRoot.replaceChildren();
-    const events=Array.isArray(data.timeline)?data.timeline:[];
-    if(!events.length){
-      timelineRoot.append(node("div","empty-state","El historial se mostrará cuando haya tarjetas autorizadas con etiqueta PUBLICAR."));
-    }else{
-      for(const event of events.slice(0,100)){
-        const item=node("div","timeline-item");
-        let label=event.type==="createCard"?"Tarjeta creada":event.type==="addAttachmentToCard"?"Adjunto agregado":event.type==="updateCard"?"Tarjeta actualizada":event.type==="updateCheckItemStateOnCard"?"Checklist actualizado":"Actividad registrada";
-        if(event.fromList||event.toList)label+=" · "+(event.fromList||"")+" → "+(event.toList||"");
-        item.append(node("b","",(event.cardTitle||"Actividad")+" — "+label));
-        item.append(node("small","",fmt(event.date)));
-        timelineRoot.append(item);
-      }
-    }
-    const foot=document.querySelector(".footer span:last-child");
-    if(foot)foot.textContent="Datos públicos sincronizados automáticamente desde Trello.";
+    const stamp=document.querySelector(".stamp");if(stamp)stamp.textContent="Actualizado: "+fmt(data.generatedAt);
+    const done=document.querySelector(".progress .done");if(done)done.style.width=(Number(m.percent)||0)+"%";
+    const legend=document.querySelector(".legend");if(legend)legend.textContent=(m.completed??0)+" completadas ("+(m.percent??0)+"%) · "+(m.pending??0)+" pendientes";
+    cards=Array.isArray(data.publicCards)?data.publicCards:[];
+    events=Array.isArray(data.timeline)?data.timeline:[];
+    options(cardArea,cards.map(c=>c.area));options(timeArea,events.map(e=>e.area));
+    renderCards();renderTimeline();
+    cardArea.addEventListener("change",renderCards);cardStatus.addEventListener("change",renderCards);
+    timePeriod.addEventListener("change",renderTimeline);timeArea.addEventListener("change",renderTimeline);
+    const foot=document.querySelector(".footer span:last-child");if(foot)foot.textContent="Datos públicos sincronizados automáticamente desde Trello.";
   }catch(error){
-    cardsRoot.replaceChildren(node("div","empty-state","No se pudieron cargar los datos dinámicos. El dashboard conserva los indicadores de referencia. Revisá el archivo data/trello.json y la ejecución de GitHub Actions."));
+    cardsRoot.replaceChildren(node("div","empty-state","No se pudieron cargar los datos dinámicos. Revisá data/trello.json y la ejecución de GitHub Actions."));
     timelineRoot.replaceChildren(node("div","empty-state","Historial no disponible hasta completar la sincronización."));
     console.error(error);
   }
