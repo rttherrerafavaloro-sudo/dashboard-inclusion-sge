@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T16:33:07.129529+00:00",
+  "generatedAt": "2026-11-14T16:37:03.172650+00:00",
   "boardUrl": "https://trello.com/b/6Ve8yJxP/inclusi%C3%B3n-tecnol%C3%B3gica-sge",
   "metrics": {
     "total": 51,
@@ -803,606 +803,361 @@
   ],
   "timeline": [
     {
+      "cardId": "6af88c95eb244887cf0e9920",
       "date": "2026-11-14T16:30:37.954Z",
       "type": "updateCard",
       "cardTitle": "Acercamiento Portal familias Padres escuela 26. 12/11",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:30:37.860Z",
-      "type": "updateCard",
-      "cardTitle": "Acercamiento Portal familias Padres escuela 26. 12/11",
-      "area": "SGE",
-      "fromList": "Tareas 2026",
-      "toList": "SGE"
-    },
-    {
-      "date": "2026-11-14T16:30:29.563Z",
-      "type": "addAttachmentToCard",
-      "cardTitle": "Acercamiento Portal familias Padres escuela 26. 12/11",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:30:21.235Z",
-      "type": "updateCard",
-      "cardTitle": "Acercamiento Portal familias Padres escuela 26. 12/11",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:30:20.900Z",
-      "type": "updateCard",
-      "cardTitle": "Acercamiento Portal familias Padres escuela 26. 12/11",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:30:19.808Z",
-      "type": "updateCard",
-      "cardTitle": "Acercamiento Portal familias Padres escuela 26. 12/11",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:30:14.932Z",
-      "type": "updateCard",
-      "cardTitle": "Acercamiento Portal familias Padres escuela 26. 12/11",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:30:13.662Z",
-      "type": "createCard",
-      "cardTitle": "Acercamiento Portal familias Padres escuela 26. 12/11",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6af61f6b781b25536310ceb6",
       "date": "2026-11-14T16:29:31.362Z",
       "type": "updateCard",
       "cardTitle": "Grabación de Ponencia Verónica Piovani para Congreso de docentes 2026. Javi (home office) 10/11",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:29:30.905Z",
-      "type": "updateCard",
-      "cardTitle": "Grabación de Ponencia Verónica Piovani para Congreso de docentes 2026. Javi (home office) 10/11",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:29:30.483Z",
-      "type": "updateCard",
-      "cardTitle": "Grabación de Ponencia Verónica Piovani para Congreso de docentes 2026. Javi (home office) 10/11",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6af61ca8b4f59f8f322fa330",
       "date": "2026-11-14T16:29:25.541Z",
       "type": "updateCard",
       "cardTitle": "Reunión de padres portal familias 12/11/26. Javi y carla",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:29:25.063Z",
-      "type": "updateCard",
-      "cardTitle": "Reunión de padres portal familias 12/11/26. Javi y carla",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:29:24.457Z",
-      "type": "updateCard",
-      "cardTitle": "Reunión de padres portal familias 12/11/26. Javi y carla",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6aeca6e67f64af686efb873d",
       "date": "2026-11-14T16:29:20.583Z",
       "type": "updateCard",
       "cardTitle": "Asistencia foro estudiantil 5/11. Javi y cesar",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:29:20.191Z",
-      "type": "updateCard",
-      "cardTitle": "Asistencia foro estudiantil 5/11. Javi y cesar",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:29:19.804Z",
-      "type": "updateCard",
-      "cardTitle": "Asistencia foro estudiantil 5/11. Javi y cesar",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6aea0f6350beb5eb70141f27",
       "date": "2026-11-14T16:29:15.057Z",
       "type": "updateCard",
       "cardTitle": "Asistencia jornada de bibliotecas. Cesar. 3/11",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:29:14.572Z",
-      "type": "updateCard",
-      "cardTitle": "Asistencia jornada de bibliotecas. Cesar. 3/11",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:29:14.025Z",
-      "type": "updateCard",
-      "cardTitle": "Asistencia jornada de bibliotecas. Cesar. 3/11",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6adf5af37bafa98810396753",
       "date": "2026-11-14T16:29:06.282Z",
       "type": "updateCard",
       "cardTitle": "Capacitación Jardin 21 jueves 22/10",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:29:05.927Z",
-      "type": "updateCard",
-      "cardTitle": "Capacitación Jardin 21 jueves 22/10",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:29:05.579Z",
-      "type": "updateCard",
-      "cardTitle": "Capacitación Jardin 21 jueves 22/10",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6ac7a94b6f1d0cdd575add66",
       "date": "2026-11-14T16:29:00.922Z",
       "type": "updateCard",
       "cardTitle": "Encuentro de padres escuela 23 portal familias, cesar, carla y javi turno mañana 8/10",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:29:00.059Z",
-      "type": "updateCard",
-      "cardTitle": "Encuentro de padres escuela 23 portal familias, cesar, carla y javi turno mañana 8/10",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:28:59.545Z",
-      "type": "updateCard",
-      "cardTitle": "Encuentro de padres escuela 23 portal familias, cesar, carla y javi turno mañana 8/10",
-      "area": "Otra"
-    },
-    {
+      "cardId": "69bd3e7c85ac1a96ff525084",
       "date": "2026-11-14T16:28:53.128Z",
       "type": "updateCard",
       "cardTitle": "INGRESANTES PRIMER AÑO EMEI PRIMARIO",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:28:52.686Z",
-      "type": "updateCard",
-      "cardTitle": "INGRESANTES PRIMER AÑO EMEI PRIMARIO",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:28:52.174Z",
-      "type": "updateCard",
-      "cardTitle": "INGRESANTES PRIMER AÑO EMEI PRIMARIO",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6ab53030c89a53c7028d0dfd",
       "date": "2026-11-14T16:28:46.793Z",
       "type": "updateCard",
       "cardTitle": "24/09 Acercamiento Módulo calificaciones y portal familias equipo de gestion escuela 19, 20, 23,26 y 27",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:28:46.360Z",
-      "type": "updateCard",
-      "cardTitle": "24/09 Acercamiento Módulo calificaciones y portal familias equipo de gestion escuela 19, 20, 23,26 y 27",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:28:45.797Z",
-      "type": "updateCard",
-      "cardTitle": "24/09 Acercamiento Módulo calificaciones y portal familias equipo de gestion escuela 19, 20, 23,26 y 27",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6ab3d32a8f52196208ce52b3",
       "date": "2026-11-14T16:28:39.096Z",
       "type": "updateCard",
       "cardTitle": "24/09 Acercamiento Módulo calificaciones y portal familias equipo de gestion escuela 2,4,7,8,10 y 14",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:28:38.563Z",
-      "type": "updateCard",
-      "cardTitle": "24/09 Acercamiento Módulo calificaciones y portal familias equipo de gestion escuela 2,4,7,8,10 y 14",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:28:38.177Z",
-      "type": "updateCard",
-      "cardTitle": "24/09 Acercamiento Módulo calificaciones y portal familias equipo de gestion escuela 2,4,7,8,10 y 14",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6aa2ce93172cff13f020f8e7",
       "date": "2026-11-14T16:28:33.562Z",
       "type": "updateCard",
       "cardTitle": "Capacitación SGE Mision salesiana secundario, Don bosco secundario 10/9",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:28:33.136Z",
-      "type": "updateCard",
-      "cardTitle": "Capacitación SGE Mision salesiana secundario, Don bosco secundario 10/9",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:28:32.691Z",
-      "type": "updateCard",
-      "cardTitle": "Capacitación SGE Mision salesiana secundario, Don bosco secundario 10/9",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6ab295f9c355ce1a3e92c791",
       "date": "2026-11-14T16:28:27.849Z",
       "type": "updateCard",
       "cardTitle": "Capacitación SGE EPEIM secundaria Javi 22/09",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:28:27.322Z",
-      "type": "updateCard",
-      "cardTitle": "Capacitación SGE EPEIM secundaria Javi 22/09",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:28:26.495Z",
-      "type": "updateCard",
-      "cardTitle": "Capacitación SGE EPEIM secundaria Javi 22/09",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6aa18ed62bb294a6ea9f2da5",
       "date": "2026-11-14T16:28:22.176Z",
       "type": "updateCard",
       "cardTitle": "Capacitación Maria auxiliadora seño Gabriela Machado 9/9 Javi",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:28:21.780Z",
-      "type": "updateCard",
-      "cardTitle": "Capacitación Maria auxiliadora seño Gabriela Machado 9/9 Javi",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:28:21.416Z",
-      "type": "updateCard",
-      "cardTitle": "Capacitación Maria auxiliadora seño Gabriela Machado 9/9 Javi",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6aa164831429438acb2c7bb9",
       "date": "2026-11-14T16:28:16.191Z",
       "type": "updateCard",
       "cardTitle": "Capacitación SGE jardin 4 y escuela 2. Carla 9/9",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:28:15.450Z",
-      "type": "updateCard",
-      "cardTitle": "Capacitación SGE jardin 4 y escuela 2. Carla 9/9",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:28:15.086Z",
-      "type": "updateCard",
-      "cardTitle": "Capacitación SGE jardin 4 y escuela 2. Carla 9/9",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6aa0d1602334f6ef6a0455b8",
       "date": "2026-11-14T16:28:10.315Z",
       "type": "updateCard",
       "cardTitle": "Capacitación SGE 9/9 Escuela 7 y escuela 43. Javi",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:28:09.796Z",
-      "type": "updateCard",
-      "cardTitle": "Capacitación SGE 9/9 Escuela 7 y escuela 43. Javi",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:28:09.267Z",
-      "type": "updateCard",
-      "cardTitle": "Capacitación SGE 9/9 Escuela 7 y escuela 43. Javi",
-      "area": "Otra"
-    },
-    {
+      "cardId": "698f68e4a592fe455a064438",
       "date": "2026-11-14T16:27:55.218Z",
       "type": "updateCard",
       "cardTitle": "Estudiantes promocionados Secundaria",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:27:54.729Z",
-      "type": "updateCard",
-      "cardTitle": "Estudiantes promocionados Secundaria",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:27:54.286Z",
-      "type": "updateCard",
-      "cardTitle": "Estudiantes promocionados Secundaria",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6a9ae5cf6a9593c2249c8d3e",
       "date": "2026-11-14T16:27:48.939Z",
       "type": "updateCard",
       "cardTitle": "Semanas de capacitaciones SGE 4/09",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:27:48.453Z",
-      "type": "updateCard",
-      "cardTitle": "Semanas de capacitaciones SGE 4/09",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:27:48.043Z",
-      "type": "updateCard",
-      "cardTitle": "Semanas de capacitaciones SGE 4/09",
-      "area": "Otra"
-    },
-    {
+      "cardId": "699dbfc2c8aa028014164102",
       "date": "2026-11-14T16:27:43.454Z",
       "type": "updateCard",
       "cardTitle": "Promociones Instituciones Privadas",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:27:42.837Z",
-      "type": "updateCard",
-      "cardTitle": "Promociones Instituciones Privadas",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:27:42.397Z",
-      "type": "updateCard",
-      "cardTitle": "Promociones Instituciones Privadas",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6a9ae562de617eeae614525c",
       "date": "2026-11-14T16:27:37.651Z",
       "type": "updateCard",
       "cardTitle": "Expo nivel inicial 26 y 27 de agosto (javi, carla, cesar y juanma)",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:27:37.129Z",
-      "type": "updateCard",
-      "cardTitle": "Expo nivel inicial 26 y 27 de agosto (javi, carla, cesar y juanma)",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:27:36.608Z",
-      "type": "updateCard",
-      "cardTitle": "Expo nivel inicial 26 y 27 de agosto (javi, carla, cesar y juanma)",
-      "area": "Otra"
-    },
-    {
+      "cardId": "69bd3f0032d318488954c403",
       "date": "2026-11-14T16:27:32.494Z",
       "type": "updateCard",
       "cardTitle": "INGRESANTES PRIMER AÑO DON BOSCO SECUNDARIO",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:27:32.025Z",
-      "type": "updateCard",
-      "cardTitle": "INGRESANTES PRIMER AÑO DON BOSCO SECUNDARIO",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:27:31.636Z",
-      "type": "updateCard",
-      "cardTitle": "INGRESANTES PRIMER AÑO DON BOSCO SECUNDARIO",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6a8d9b8a44e20f48b954dc61",
       "date": "2026-11-14T16:27:26.194Z",
       "type": "updateCard",
       "cardTitle": "Capacitación SGE 25/8, ESC 35, JARDIN 27, JARDIN 1, EPEIM",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:27:25.552Z",
-      "type": "updateCard",
-      "cardTitle": "Capacitación SGE 25/8, ESC 35, JARDIN 27, JARDIN 1, EPEIM",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:27:25.127Z",
-      "type": "updateCard",
-      "cardTitle": "Capacitación SGE 25/8, ESC 35, JARDIN 27, JARDIN 1, EPEIM",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6a8719bb1924f683e410afba",
       "date": "2026-11-14T16:27:20.689Z",
       "type": "updateCard",
       "cardTitle": "Capacitación SGE personal nuevo JIF. Javi 20/08",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:27:20.107Z",
-      "type": "updateCard",
-      "cardTitle": "Capacitación SGE personal nuevo JIF. Javi 20/08",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:27:19.667Z",
-      "type": "updateCard",
-      "cardTitle": "Capacitación SGE personal nuevo JIF. Javi 20/08",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6a8719991d14d1468031ae18",
       "date": "2026-11-14T16:27:14.967Z",
       "type": "updateCard",
       "cardTitle": "Reunión con haspen por consultas sobre SGE. Carla, 20/08",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:27:14.424Z",
-      "type": "updateCard",
-      "cardTitle": "Reunión con haspen por consultas sobre SGE. Carla, 20/08",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:27:13.912Z",
-      "type": "updateCard",
-      "cardTitle": "Reunión con haspen por consultas sobre SGE. Carla, 20/08",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6a7dd3c4884d8594dd1e34cf",
       "date": "2026-11-14T16:27:09.410Z",
       "type": "updateCard",
       "cardTitle": "Sala de escape YPF, Participan Javi, Carla y Cesar (13/08)",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:27:08.596Z",
-      "type": "updateCard",
-      "cardTitle": "Sala de escape YPF, Participan Javi, Carla y Cesar (13/08)",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:27:07.325Z",
-      "type": "updateCard",
-      "cardTitle": "Sala de escape YPF, Participan Javi, Carla y Cesar (13/08)",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6a45339284ad418612ddfb6e",
       "date": "2026-11-14T16:27:00.586Z",
       "type": "updateCard",
       "cardTitle": "Reunión de padres y demostración del portal familias escuela 20 sala 2A. 6/07",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:26:59.801Z",
-      "type": "updateCard",
-      "cardTitle": "Reunión de padres y demostración del portal familias escuela 20 sala 2A. 6/07",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:26:59.241Z",
-      "type": "updateCard",
-      "cardTitle": "Reunión de padres y demostración del portal familias escuela 20 sala 2A. 6/07",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6a3ea02edcca71277c23ac13",
       "date": "2026-11-14T16:26:54.129Z",
       "type": "updateCard",
       "cardTitle": "Reunión con seño amanda alancay escuela 20 para carga de calificaciones en sge para posterior implementación en portal familias 29/06",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:26:53.536Z",
-      "type": "updateCard",
-      "cardTitle": "Reunión con seño amanda alancay escuela 20 para carga de calificaciones en sge para posterior implementación en portal familias 29/06",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:26:53.183Z",
-      "type": "updateCard",
-      "cardTitle": "Reunión con seño amanda alancay escuela 20 para carga de calificaciones en sge para posterior implementación en portal familias 29/06",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6a3e9fed14d4b34f0b9dbce5",
       "date": "2026-11-14T16:26:48.065Z",
       "type": "updateCard",
       "cardTitle": "Reunión con escuela 20 angela loij para coordinar prueba piloto de portal familias y Reunión de padres para demostración de funcionalidades 26/06",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:26:47.607Z",
-      "type": "updateCard",
-      "cardTitle": "Reunión con escuela 20 angela loij para coordinar prueba piloto de portal familias y Reunión de padres para demostración de funcionalidades 26/06",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:26:47.099Z",
-      "type": "updateCard",
-      "cardTitle": "Reunión con escuela 20 angela loij para coordinar prueba piloto de portal familias y Reunión de padres para demostración de funcionalidades 26/06",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6a28247970f01850eaa7c95a",
       "date": "2026-11-14T16:26:41.668Z",
       "type": "updateCard",
       "cardTitle": "JUNIO Asistencia en inscripción a junta primaria y modalidades. Mes de junio en gamelas de thorne (cesar y javi)",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:26:40.488Z",
-      "type": "updateCard",
-      "cardTitle": "JUNIO Asistencia en inscripción a junta primaria y modalidades. Mes de junio en gamelas de thorne (cesar y javi)",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:26:40.014Z",
-      "type": "updateCard",
-      "cardTitle": "JUNIO Asistencia en inscripción a junta primaria y modalidades. Mes de junio en gamelas de thorne (cesar y javi)",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6a28244be4d88e0c882a769a",
       "date": "2026-11-14T16:26:35.149Z",
       "type": "updateCard",
       "cardTitle": "Reunión con supervisión secundaria (Ale Franck) y equipo directivo del Polivalente  de Arte rg. Se determinó que trabajarán solo la FG en el SGE. 08/05/26",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:26:34.678Z",
-      "type": "updateCard",
-      "cardTitle": "Reunión con supervisión secundaria (Ale Franck) y equipo directivo del Polivalente  de Arte rg. Se determinó que trabajarán solo la FG en el SGE. 08/05/26",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:26:34.222Z",
-      "type": "updateCard",
-      "cardTitle": "Reunión con supervisión secundaria (Ale Franck) y equipo directivo del Polivalente  de Arte rg. Se determinó que trabajarán solo la FG en el SGE. 08/05/26",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6a21abed188bb7bda92fb9ac",
       "date": "2026-11-14T16:26:28.133Z",
       "type": "updateCard",
       "cardTitle": "Capacitación escuela 10 sobre sge 29/05",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:26:27.676Z",
-      "type": "updateCard",
-      "cardTitle": "Capacitación escuela 10 sobre sge 29/05",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:26:27.189Z",
-      "type": "updateCard",
-      "cardTitle": "Capacitación escuela 10 sobre sge 29/05",
-      "area": "Otra"
-    },
-    {
+      "cardId": "6a0e3fe5bbf3d2ea6a8a7edd",
       "date": "2026-11-14T16:26:19.931Z",
       "type": "updateCard",
       "cardTitle": "Reunión virtual con supervision nivel secundario para tratar temas de sge sobre polivalente de arte rg",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:26:19.132Z",
-      "type": "updateCard",
-      "cardTitle": "Reunión virtual con supervision nivel secundario para tratar temas de sge sobre polivalente de arte rg",
-      "area": "Otra"
-    },
-    {
-      "date": "2026-11-14T16:26:18.662Z",
-      "type": "updateCard",
-      "cardTitle": "Reunión virtual con supervision nivel secundario para tratar temas de sge sobre polivalente de arte rg",
-      "area": "Otra"
-    },
-    {
+      "cardId": "69bd3fa2a095cd0d477cf1d7",
       "date": "2026-11-14T16:26:12.650Z",
       "type": "updateCard",
       "cardTitle": "CITAR EMEI SECUNDARIO PARA CAPACITAR",
-      "area": "Otra"
+      "area": "SGE"
     },
     {
-      "date": "2026-11-14T16:26:11.990Z",
+      "cardId": "69bd3fcd1284c70c1e229232",
+      "date": "2026-11-14T16:25:59.811Z",
       "type": "updateCard",
-      "cardTitle": "CITAR EMEI SECUNDARIO PARA CAPACITAR",
-      "area": "Otra"
+      "cardTitle": "CITAR EPEIM SECUNDARIO",
+      "area": "SGE"
+    },
+    {
+      "cardId": "69bd3e5b4246d128ae84376d",
+      "date": "2026-11-14T16:25:53.645Z",
+      "type": "updateCard",
+      "cardTitle": "CITAR I.R.A PRIMARIO Y SECUNDARIO.",
+      "area": "SGE"
+    },
+    {
+      "cardId": "69bd3db78043007bc4d4362c",
+      "date": "2026-11-14T16:25:46.341Z",
+      "type": "updateCard",
+      "cardTitle": "CITAR EADEB PRIMARIO Y SECUNDARIO (CIERG)",
+      "area": "SGE"
+    },
+    {
+      "cardId": "698f68cf6457036d41360dd7",
+      "date": "2026-11-14T16:25:40.353Z",
+      "type": "updateCard",
+      "cardTitle": "Febrero: Ingresantes cargados en 1 er año",
+      "area": "SGE"
+    },
+    {
+      "cardId": "69a6e0c3468f6069c80471c2",
+      "date": "2026-11-14T16:25:34.382Z",
+      "type": "updateCard",
+      "cardTitle": "Capacitaciones y refuerzo a Inicial, Primario y Secundario (Mes de marzo)",
+      "area": "SGE"
+    },
+    {
+      "cardId": "699dbfaa3473e6fe21d3daac",
+      "date": "2026-11-14T16:25:27.710Z",
+      "type": "updateCard",
+      "cardTitle": "Estudiantes Promocionados Inicial",
+      "area": "SGE"
+    },
+    {
+      "cardId": "699dbfa1b9350fd0a1aeb7e7",
+      "date": "2026-11-14T16:25:20.595Z",
+      "type": "updateCard",
+      "cardTitle": "Estudiantes Promocionados Primaria",
+      "area": "SGE"
+    },
+    {
+      "cardId": "69b8169b5cd99e332688c768",
+      "date": "2026-11-14T16:25:13.506Z",
+      "type": "updateCard",
+      "cardTitle": "Capacitación SGE, Jardín 4 y Escuela 7",
+      "area": "SGE"
+    },
+    {
+      "cardId": "69b37481bf73d34016235ccc",
+      "date": "2026-11-14T16:25:06.681Z",
+      "type": "updateCard",
+      "cardTitle": "Capacitación SGE escuela 20, EMEI PRIMARIO, JARDÍN... 11/03/2026 TM Y TT",
+      "area": "SGE"
+    },
+    {
+      "cardId": "69af17852a658d841918e78b",
+      "date": "2026-11-14T16:24:59.228Z",
+      "type": "updateCard",
+      "cardTitle": "Capacitación SGE, 23, 42, 20, Cono sur secundaria. 9/03. 10:00 hs",
+      "area": "SGE"
+    },
+    {
+      "cardId": "69a9a6830e8d3f00aadc6dca",
+      "date": "2026-11-14T16:24:49.650Z",
+      "type": "updateCard",
+      "cardTitle": "Reunión con el Polivalente de arte Rg: definir estructura de cursado 2026 SGE (05/03)",
+      "area": "SGE"
+    },
+    {
+      "cardId": "6af61f13b4c33bdb7b20a01f",
+      "date": "2026-11-14T16:24:43.067Z",
+      "type": "updateCard",
+      "cardTitle": "Titulacíon nueva CONO SUR. Cargada pero no confirmada. Se implementará en 2027",
+      "area": "SGE"
+    },
+    {
+      "cardId": "69977004a3b406dfb3603d6f",
+      "date": "2026-11-14T16:24:26.449Z",
+      "type": "updateCard",
+      "cardTitle": "Reunión con Juan Pablo Aguirre para reordenamiento de la oficina RG",
+      "area": "Reuniones Generales"
+    },
+    {
+      "cardId": "699dc025556fd25cfa3df6d3",
+      "date": "2026-11-14T16:24:19.174Z",
+      "type": "updateCard",
+      "cardTitle": "Reunión con el equipo de RG (se suman Juanma y cesar a tareas de SGE) DEFINIR METODOLOGÍA DE TRABAJO Y PROPUESTAS PARA SEGUIMIENTO DE LAS TAREAS (03/03/2026)",
+      "area": "Reuniones Generales"
+    },
+    {
+      "cardId": "699dbff7977754ef08415de7",
+      "date": "2026-11-14T16:24:06.735Z",
+      "type": "updateCard",
+      "cardTitle": "Reunión para definiciones de dinámica de trabajo RG (Juampa, Guille, Javi) (03/03)",
+      "area": "Reuniones Generales"
+    },
+    {
+      "cardId": "698f691f6ac87582dab76099",
+      "date": "2026-11-14T16:23:57.675Z",
+      "type": "updateCard",
+      "cardTitle": "Titulación del Soberanía modificada",
+      "area": "En proceso"
+    },
+    {
+      "cardId": "698f692748801d99c2d39643",
+      "date": "2026-11-14T16:23:47.715Z",
+      "type": "updateCard",
+      "cardTitle": "Titulación del Haspen modificada",
+      "area": "Tareas 2026"
+    },
+    {
+      "cardId": "698f69156010433adafb401d",
+      "date": "2026-11-14T16:23:38.749Z",
+      "type": "updateCard",
+      "cardTitle": "Titulación del Guevara modificada",
+      "area": "Tareas 2026"
+    },
+    {
+      "cardId": "69bd3c0dd78922a7f141442c",
+      "date": "2026-04-06T13:37:13.867Z",
+      "type": "addAttachmentToCard",
+      "cardTitle": "Instalación carro de tablets Jardín 11 (Juanma y Cesar)",
+      "area": "Conectar Técnico"
     }
   ],
   "privacy": {
