@@ -2,6 +2,12 @@ name: Actualizar dashboard desde Trello
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "scripts/**"
+      - ".github/workflows/**"
   schedule:
     - cron: "17 */6 * * *"
 
