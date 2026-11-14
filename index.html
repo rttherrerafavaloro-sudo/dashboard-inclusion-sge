@@ -99,7 +99,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
 <section class="panel" style="margin-top:16px">
   <h2>Historial cronológico</h2>
   <p class="hint">Actividad cronológica de las tareas publicadas. Se omiten comentarios y nombres de integrantes.</p>
-  <div class="timeline-tools"><select id="timeline-period"><option value="all">Todo el historial</option><option value="30">Últimos 30 días</option><option value="90">Últimos 90 días</option><option value="365">Último año</option></select><select id="timeline-area"><option value="all">Todas las áreas</option></select></div>
+  <div class="timeline-tools"><select id="timeline-period"><option value="all">Todo el historial</option><option value="30">Últimos 30 días</option><option value="90">Últimos 90 días</option><option value="365">Último año</option></select><select id="timeline-area"><option value="all">Todas las áreas</option></select><button id="export-timeline" type="button" style="border:0;border-radius:9px;padding:9px 12px;background:var(--blue);color:#fff;font:inherit;font-size:12px;font-weight:700;cursor:pointer">Descargar listado CSV</button></div>
   <div class="timeline" id="public-timeline"><div class="empty-state">Cargando historial…</div></div>
 </section>
 
@@ -144,19 +144,38 @@ document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>
       card.append(body);cardsRoot.append(card);
     }
   }
+  function getVisibleTimeline(){
+    const days=Number(timePeriod.value)||0,cutoff=days?Date.now()-days*86400000:0;
+    return events.filter(e=>(!cutoff||new Date(e.date).getTime()>=cutoff)&&(timeArea.value==="all"||e.area===timeArea.value));
+  }
   function renderTimeline(){
     timelineRoot.replaceChildren();
-    const days=Number(timePeriod.value)||0,cutoff=days?Date.now()-days*86400000:0;
-    const visible=events.filter(e=>(!cutoff||new Date(e.date).getTime()>=cutoff)&&(timeArea.value==="all"||e.area===timeArea.value));
-    if(!visible.length){timelineRoot.append(node("div","empty-state",events.length?"No hay movimientos para ese período o área.":"El historial aparecerá cuando haya tarjetas autorizadas con la etiqueta PUBLICAR."));return;}
+    const visible=getVisibleTimeline();
+    if(!visible.length){timelineRoot.append(node("div","empty-state",events.length?"No hay actividades para ese período o área.":"El historial aparecerá cuando haya tarjetas autorizadas con la etiqueta PUBLICAR."));return;}
     visible.slice(0,100).forEach(event=>{
       const item=node("div","timeline-item");
-      let label=event.type==="createCard"?"Actividad creada":event.type==="addAttachmentToCard"?"Imagen o archivo adjunto":event.type==="updateCard"?"Actividad actualizada":event.type==="updateCheckItemStateOnCard"?"Checklist actualizado":"Movimiento registrado";
+      let label=event.type==="createCard"?"Actividad creada":event.type==="addAttachmentToCard"?"Imagen o archivo adjunto":event.type==="updateCard"?"Última actualización":event.type==="updateCheckItemStateOnCard"?"Checklist actualizado":"Movimiento registrado";
       if(event.fromList||event.toList)label+=" · "+(event.fromList||"")+" → "+(event.toList||"");
       item.append(node("b","",(event.cardTitle||"Actividad")+" — "+label));
       item.append(node("small","",(event.area||"Sin área")+" · "+fmt(event.date)));
       timelineRoot.append(item);
     });
+  }
+  function exportTimelineCSV(){
+    const rows=getVisibleTimeline();
+    if(!rows.length){alert("No hay actividades para descargar con los filtros seleccionados.");return;}
+    const quote=value=>'"'+String(value??"").replace(/"/g,'""')+'"';
+    const headers=["Fecha","Actividad","Área","Último movimiento","Cambio de lista"];
+    const lines=[headers.map(quote).join(";"),...rows.map(e=>[
+      e.date?new Date(e.date).toLocaleString("es-AR"):"",
+      e.cardTitle||"",e.area||"",
+      e.type==="createCard"?"Creación":e.type==="addAttachmentToCard"?"Adjunto":e.type==="updateCard"?"Actualización":e.type==="updateCheckItemStateOnCard"?"Checklist":"Movimiento",
+      e.fromList||e.toList?(String(e.fromList||"")+" → "+String(e.toList||"")):""
+    ].map(quote).join(";"))];
+    const blob=new Blob(["\\uFEFF"+lines.join("\\r\\n")],{type:"text/csv;charset=utf-8;"});
+    const url=URL.createObjectURL(blob),link=document.createElement("a");
+    link.href=url;link.download="historial-cronologico-sge.csv";
+    document.body.append(link);link.click();link.remove();URL.revokeObjectURL(url);
   }
   try{
     const response=await fetch("data/trello.json?ts="+Date.now(),{cache:"no-store"});
@@ -187,6 +206,7 @@ document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>
     renderCards();renderTimeline();
     cardArea.addEventListener("change",renderCards);cardStatus.addEventListener("change",renderCards);
     timePeriod.addEventListener("change",renderTimeline);timeArea.addEventListener("change",renderTimeline);
+    document.getElementById("export-timeline").addEventListener("click",exportTimelineCSV);
     // La lista de pendientes y sus filtros también se construyen desde Trello.
     const pendingCards=cards.filter(c=>!c.completed);
     const tabsRoot=document.getElementById("tabs"),tasksRoot=document.getElementById("tasks");
