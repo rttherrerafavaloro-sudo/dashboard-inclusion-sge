@@ -74,6 +74,8 @@ def main():
     complete = [c for c in real_cards if c.get("dueComplete")]
     pending = [c for c in real_cards if not c.get("dueComplete") and not c.get("closed")]
     by_area = Counter(list_names.get(c.get("idList"), "Otra") for c in real_cards)
+    complete_by_area = Counter(list_names.get(c.get("idList"), "Otra") for c in complete)
+    pending_by_area = Counter(list_names.get(c.get("idList"), "Otra") for c in pending)
 
     created_dates = {}
     for action in activities:
@@ -144,7 +146,9 @@ def main():
             "completed": len(complete),
             "pending": len(pending),
             "percent": round(100 * len(complete) / len(real_cards)) if real_cards else 0,
-            "byArea": dict(sorted(by_area.items()))
+            "byArea": dict(sorted(by_area.items())),
+            "completedByArea": dict(sorted(complete_by_area.items())),
+            "pendingByArea": dict(sorted(pending_by_area.items()))
         },
         "publicCards": public_cards,
         "timeline": timeline[:100],
