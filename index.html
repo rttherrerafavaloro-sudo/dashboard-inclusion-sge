@@ -74,53 +74,22 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
   </article>
   <article class="panel">
     <h2>Distribución por área</h2><p class="hint">Cantidad de tarjetas por lista de Trello</p>
-    <div class="bars">
-      <div class="barrow"><span>SGE</span><div class="track"><div class="fill" style="width:100%"></div></div><b>43</b></div>
-      <div class="barrow"><span>Reuniones</span><div class="track"><div class="fill" style="width:7%"></div></div><b>3</b></div>
-      <div class="barrow"><span>Objetivo 2026</span><div class="track"><div class="fill" style="width:4.7%"></div></div><b>2</b></div>
-      <div class="barrow"><span>En proceso</span><div class="track"><div class="fill" style="width:2.3%"></div></div><b>1</b></div>
-      <div class="barrow"><span>Conectar Técnico</span><div class="track"><div class="fill" style="width:2.3%"></div></div><b>1</b></div>
-    </div>
+    <div class="bars" id="area-bars"></div>
   </article>
 </section>
 <section class="panel" style="margin-top:16px">
   <h2>Estado por área</h2><p class="hint">Actividades completadas y pendientes; no se contabilizan las tarjetas usadas como títulos de sección</p>
   <table><thead><tr><th>Área / lista</th><th class="num">Completas</th><th class="num">Abiertas</th><th class="num">Total</th></tr></thead>
-  <tbody>
-  <tr><td>SGE</td><td class="num">43</td><td class="num">0</td><td class="num">43</td></tr>
-  <tr><td>Objetivo 2026</td><td class="num">0</td><td class="num">2</td><td class="num">2</td></tr>
-  <tr><td>En proceso</td><td class="num">0</td><td class="num">1</td><td class="num">1</td></tr>
-  <tr><td>Reuniones Generales</td><td class="num">3</td><td class="num">0</td><td class="num">3</td></tr>
-  <tr><td>Conectar Técnico</td><td class="num">1</td><td class="num">0</td><td class="num">1</td></tr>
-  </tbody></table>
+  <tbody id="area-rows"></tbody></table>
 </section>
 <section class="panel" style="margin-top:16px">
   <h2>Seguimiento de pendientes</h2><p class="hint">Seleccioná un área para consultar las tres actividades pendientes</p>
-  <div class="tabs" id="tabs">
-    <button class="tab active" data-area="all">Todas (3)</button>
-    <button class="tab" data-area="Objetivo 2026">Objetivo 2026</button>
-    <button class="tab" data-area="En proceso">En proceso</button>
-    <button class="tab" data-area="Reuniones Generales">Reuniones</button>
-    <button class="tab" data-area="Conectar Técnico">Soporte</button>
-    <button class="tab" data-area="SGE">SGE</button>
-  </div>
-  <div class="tasks" id="tasks">
-    <div class="task" data-area="Objetivo 2026"><a href="https://trello.com/c/drdxKVqJ/4-titulaci%C3%B3n-del-guevara-modificada" target="_blank" rel="noopener">Titulación del Guevara modificada</a><span class="tag">Objetivo 2026</span></div>
+  <div class="tabs" id="tabs"></div>
+  <div class="tasks" id="tasks"><div class="empty-state">Cargando pendientes…</div></div>
     <div class="task" data-area="Objetivo 2026"><a href="https://trello.com/c/GLtiOj0W/6-titulaci%C3%B3n-del-haspen-modificada" target="_blank" rel="noopener">Titulación del Haspen modificada</a><span class="tag">Objetivo 2026</span></div>
     <div class="task" data-area="En proceso"><a href="https://trello.com/c/EjcZYiSw/5-titulaci%C3%B3n-del-soberan%C3%ADa-modificada" target="_blank" rel="noopener">Titulación del Soberanía modificada</a><span class="tag">En proceso</span></div>
   </div>
 </section>
-<section class="panel" style="margin-top:16px">
-  <h2>Propuesta de mejora del tablero Trello</h2><p class="hint">Propuesta para ordenar la información y mejorar futuros indicadores. No se aplicaron cambios.</p>
-  <div class="proposal">
-    <div><b>Etiquetas por área</b><span>Capacitación, gestión SGE, soporte, reuniones y proyectos.</span></div>
-    <div><b>Responsables</b><span>Asignar una persona referente a cada tarea.</span></div>
-    <div><b>Fechas y prioridades</b><span>Incorporar vencimientos y niveles de prioridad.</span></div>
-    <div><b>Checklists y resultados</b><span>Registrar etapas, entregables y resultados concretos.</span></div>
-  </div>
-  <div class="note">Recomendación: mantener el tablero operativo como fuente de trabajo y usar este dashboard como vista de seguimiento. Antes de compartirlo, revisar que no se publiquen datos personales o información sensible de estudiantes.</div>
-</section>
-
 <section class="panel" style="margin-top:16px" id="actividad-publicada">
   <h2>Actividades documentadas</h2>
   <p class="hint">Registro visual de tareas autorizadas. Cada ficha puede incluir descripción, estado, fecha e imágenes adjuntas desde Trello.</p>
@@ -134,7 +103,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
   <div class="timeline" id="public-timeline"><div class="empty-state">Cargando historial…</div></div>
 </section>
 
-<footer class="footer"><span>Fuente: tablero Trello “Inclusión Tecnológica - SGE”.</span><a href="https://trello.com/b/6Ve8yJxP/inclusi%C3%B3n-tecnol%C3%B3gica-sge" target="_blank" rel="noopener">Abrir tablero de Trello ↗</a><span>Prototipo estático · requiere actualización de datos para reflejar cambios posteriores.</span></footer>
+<footer class="footer"><span>Fuente: tablero Trello “Inclusión Tecnológica - SGE”.</span><a href="https://trello.com/b/6Ve8yJxP/inclusi%C3%B3n-tecnol%C3%B3gica-sge" target="_blank" rel="noopener">Abrir tablero de Trello ↗</a><span>Datos públicos sincronizados automáticamente desde Trello.</span></footer>
 </div>
 <script>
 document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{
@@ -198,12 +167,51 @@ document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>
     const stamp=document.querySelector(".stamp");if(stamp)stamp.textContent="Actualizado: "+fmt(data.generatedAt);
     const done=document.querySelector(".progress .done");if(done)done.style.width=(Number(m.percent)||0)+"%";
     const legend=document.querySelector(".legend");if(legend)legend.textContent=(m.completed??0)+" completadas ("+(m.percent??0)+"%) · "+(m.pending??0)+" pendientes";
+    // Distribución por área y estado: siempre proviene del snapshot actualizado desde Trello.
+    const areaBars=document.getElementById("area-bars"),areaRows=document.getElementById("area-rows");
+    const byArea=m.byArea||{},completedByArea=m.completedByArea||{},pendingByArea=m.pendingByArea||{};
+    const areas=Object.keys(byArea).sort((a,b)=>(byArea[b]||0)-(byArea[a]||0));
+    const maxArea=Math.max(1,...areas.map(a=>byArea[a]||0));
+    if(areaBars){areaBars.replaceChildren();areas.forEach(area=>{
+      const row=node("div","barrow"),name=node("span","",area),track=node("div","track"),fill=node("div","fill");
+      fill.style.width=((byArea[area]||0)/maxArea*100)+"%";track.append(fill);
+      row.append(name,track,node("b","",String(byArea[area]||0)));areaBars.append(row);
+    });}
+    if(areaRows){areaRows.replaceChildren();areas.forEach(area=>{
+      const tr=node("tr"),cell=(v,cls)=>node("td",cls||"",String(v));
+      tr.append(cell(area),cell(completedByArea[area]||0,"num"),cell(pendingByArea[area]||0,"num"),cell(byArea[area]||0,"num"));areaRows.append(tr);
+    });}
     cards=Array.isArray(data.publicCards)?data.publicCards:[];
     events=Array.isArray(data.timeline)?data.timeline:[];
     options(cardArea,cards.map(c=>c.area));options(timeArea,events.map(e=>e.area));
     renderCards();renderTimeline();
     cardArea.addEventListener("change",renderCards);cardStatus.addEventListener("change",renderCards);
     timePeriod.addEventListener("change",renderTimeline);timeArea.addEventListener("change",renderTimeline);
+    // La lista de pendientes y sus filtros también se construyen desde Trello.
+    const pendingCards=cards.filter(c=>!c.completed);
+    const tabsRoot=document.getElementById("tabs"),tasksRoot=document.getElementById("tasks");
+    function renderPending(area="all"){
+      tasksRoot.replaceChildren();
+      const selected=pendingCards.filter(c=>area==="all"||c.area===area);
+      if(!selected.length){tasksRoot.append(node("div","empty-state","No hay actividades pendientes para este filtro."));return;}
+      selected.forEach(c=>{
+        const row=node("div","task"),link=node("a","",c.title||"Actividad pendiente");
+        link.href=c.url||"#";link.target="_blank";link.rel="noopener noreferrer";
+        row.append(link,node("span","tag",c.area||"Sin área"));tasksRoot.append(row);
+      });
+    }
+    if(tabsRoot){
+      tabsRoot.replaceChildren();
+      const areasWithPending=[...new Set(pendingCards.map(c=>c.area).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"es"));
+      [["all","Todas ("+pendingCards.length+")"],...areasWithPending.map(a=>[a,a])].forEach(([area,label],index)=>{
+        const button=node("button","tab"+(index===0?" active":""),label);button.type="button";
+        button.addEventListener("click",()=>{
+          tabsRoot.querySelectorAll(".tab").forEach(b=>b.classList.remove("active"));
+          button.classList.add("active");renderPending(area);
+        });tabsRoot.append(button);
+      });
+    }
+    renderPending();
     const foot=document.querySelector(".footer span:last-child");if(foot)foot.textContent="Datos públicos sincronizados automáticamente desde Trello.";
   }catch(error){
     cardsRoot.replaceChildren(node("div","empty-state","No se pudieron cargar los datos dinámicos. Revisá data/trello.json y la ejecución de GitHub Actions."));
