@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T20:49:10.099Z",
+  "generatedAt": "2026-11-14T01:50:23.140488+00:00",
   "boardUrl": "https://trello.com/b/6Ve8yJxP/inclusi%C3%B3n-tecnol%C3%B3gica-sge",
   "metrics": {
     "total": 50,
@@ -18,6 +18,6 @@
   "timeline": [],
   "privacy": {
     "publicCardCount": 0,
-    "rules": "La publicación de tarjetas requiere autorización mediante etiquetas Trello. Comentarios e identidades de integrantes no se publican."
+    "rules": "Solo se publican tarjetas con etiqueta PUBLICAR. Descripciones e imágenes requieren etiquetas adicionales. Comentarios y nombres de integrantes nunca se publican."
   }
 }
