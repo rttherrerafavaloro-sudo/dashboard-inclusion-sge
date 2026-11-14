@@ -63,16 +63,12 @@ def main():
     })
 
 
+    # Exclude section-heading cards regardless of accents or punctuation.
+    # Archived task cards remain in the historical total, as before.
+    normalized_headers = {normalize_title(x) for x in HEADER_CARDS}
     real_cards = [
         c for c in cards
-        if normalize_title(c.get("name")) not in {normalize_title(x) for x in HEADER_CARDS}
-        and not c.get("closed", False)
-    ]
-    # Keep closed section-header cards out, but count archived/closed task cards
-    # only if they are not one of the exact heading cards.
-    real_cards = [
-        c for c in cards
-        if clean_text(c.get("name")).casefold() not in HEADER_CARDS
+        if normalize_title(c.get("name")) not in normalized_headers
     ]
 
     complete = [c for c in real_cards if c.get("dueComplete")]
