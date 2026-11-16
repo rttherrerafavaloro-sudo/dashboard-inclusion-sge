@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-11-16T09:07:24.317935+00:00",
+  "generatedAt": "2026-11-16T15:28:48.541567+00:00",
   "boardUrl": "https://trello.com/b/6Ve8yJxP/inclusi%C3%B3n-tecnol%C3%B3gica-sge",
   "metrics": {
-    "total": 51,
-    "completed": 48,
+    "total": 52,
+    "completed": 49,
     "pending": 3,
     "percent": 94,
     "byArea": {
       "Conectar Técnico": 1,
       "En proceso": 1,
       "Reuniones Generales": 3,
-      "SGE": 44,
+      "SGE": 45,
       "Tareas 2026": 2
     },
     "completedByArea": {
       "Conectar Técnico": 1,
       "Reuniones Generales": 3,
-      "SGE": 44
+      "SGE": 45
     },
     "pendingByArea": {
       "En proceso": 1,
