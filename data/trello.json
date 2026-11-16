@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T15:28:48.541567+00:00",
+  "generatedAt": "2026-11-16T19:19:36.877428+00:00",
   "boardUrl": "https://trello.com/b/6Ve8yJxP/inclusi%C3%B3n-tecnol%C3%B3gica-sge",
   "metrics": {
     "total": 52,
@@ -799,9 +799,29 @@
           "mimeType": "image/jpeg"
         }
       ]
+    },
+    {
+      "id": "6afb0f226d7b1a9a3482a487",
+      "title": "Asistencia por problema de usuario a secretaria esc 21 en la escuela 32 16/11. Javi",
+      "url": "https://trello.com/c/xh2y3LMz/60-asistencia-por-problema-de-usuario-a-secretaria-esc-21-en-la-escuela-32-16-11-javi",
+      "area": "SGE",
+      "completed": true,
+      "closed": false,
+      "due": null,
+      "lastActivity": "2026-11-16T18:48:58.823Z",
+      "createdAt": "2026-11-16T14:11:46.224Z",
+      "description": "",
+      "images": []
     }
   ],
   "timeline": [
+    {
+      "cardId": "6afb0f226d7b1a9a3482a487",
+      "date": "2026-11-16T18:48:58.864Z",
+      "type": "updateCard",
+      "cardTitle": "Asistencia por problema de usuario a secretaria esc 21 en la escuela 32 16/11. Javi",
+      "area": "SGE"
+    },
     {
       "cardId": "6af88c95eb244887cf0e9920",
       "date": "2026-11-14T16:30:37.954Z",
@@ -1161,7 +1181,7 @@
     }
   ],
   "privacy": {
-    "publicCardCount": 51,
+    "publicCardCount": 52,
     "rules": "Solo se publican tarjetas con etiqueta PUBLICAR. Descripciones e imágenes requieren etiquetas adicionales. Comentarios y nombres de integrantes nunca se publican."
   }
 }
